@@ -5,6 +5,7 @@ using extOSC;
 
 public class OscProcess : MonoBehaviour
 {
+    /* c'est pour pointer vers le script AsteroidDodger et le asteroidDodger c'est la référence au script AsteroidDodger */
     public AsteroidDodger asteroidDodger;
     public OSCReceiver oscReceiver;
 
@@ -18,6 +19,7 @@ public class OscProcess : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*c'est pour binder le récepteur OSC à l'adresse "/photo" c'est le message envoyé par le capteur */
         oscReceiver.Bind("/photo", TraiterMessagePhoto);
 
     }
@@ -37,6 +39,7 @@ public class OscProcess : MonoBehaviour
 
     }
 
+    /*c'est pour traiter le message OSC reçu à l'adresse "/photo" */
     void TraiterMessagePhoto(OSCMessage message)
     {
         // Traiter un entier et l’appliquer à une propriété (flux continu)
